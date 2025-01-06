@@ -12,9 +12,9 @@ public class UserServlet extends HttpServlet {
 
     // Simulated API key for this example
     private static final String VALID_API_KEY = "d18d87ba-7baa-4954-bfe0-a89eb2c32b01"; 
-    
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         // Get the API key from the request header
         String apiKey = request.getHeader("API-Key");
@@ -22,6 +22,7 @@ public class UserServlet extends HttpServlet {
         // Check if the API key matches
         if (VALID_API_KEY.equals(apiKey)) {
             // Process the request for authorized access
+            response.setStatus(HttpServletResponse.SC_OK);
             response.getWriter().write("This is a private path, and you have access!");
         } else {
             // Unauthorized access
