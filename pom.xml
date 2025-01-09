@@ -32,6 +32,12 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20210307</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -52,7 +58,7 @@
                 <configuration>
                     <httpConnector>
                         <host>0.0.0.0</host>
-                        <port>1234</port>
+                        <port>1235</port>
                     </httpConnector>
                 </configuration>
             </plugin>
